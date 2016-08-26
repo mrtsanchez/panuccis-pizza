@@ -7,3 +7,11 @@ body {
   font-variant: small-caps;
   font-weight: bold;
 }
+
+.custom-button {
+  float: right;
+}
+
+#checkout, #add-more-pizza {
+  display: none;
+}

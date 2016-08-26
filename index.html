@@ -10,7 +10,7 @@
   </head>
   <body>
 
-    <div class="container-fluid">
+    <div class="container-fluid header">
 
       <div class="jumbotron">
         <h1>Panucci's pizza</h1>
@@ -18,7 +18,7 @@
 
     </div>
 
-    <div class="container">
+    <div class="container pizza-customization">
 
       <div class="row"> <!-- main: pizza selector -->
         <div class="col-md-8">
@@ -83,27 +83,43 @@
 
         </div>
 
-
-
-
         <div class="col-md-4">
-
           <ul class="list-group" id = "pizza-order">
-
           </ul>
-
         </div>
-
       </div>     <!-- colse main row -->
 
       <div class="row">
-        <div class= "col-md-12">
-          <button type="submit" class="btn">Add this pizza to my order</button>
+        <div class= "col-md-8">
+          <button type="submit" class="btn btn-lg custom-button" id="add-pizza">Add this pizza to my order</button>
         </div>
-
       </form>
-
+      <div class= "col-md-4">
+        <button type="button" class="btn btn-lg custom-button" id="add-more-pizza">Add Another Pizza</button>
+        <button type="button" class="btn btn-lg custom-button" id="checkout">Checkout</button>
+      </div>
     </div>
+
+  </div>
+
+  <div class="container checkout">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <p>
+              Order Details:
+            </p>
+            <ul class="list-unstyled" id="order-details">
+
+            </ul>
+            <button type="button" class="btn btn-lg" id="delivery">Delivery</button>
+            <button type="button" class="btn btn-lg" id="pickup">Carryout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   </body>
