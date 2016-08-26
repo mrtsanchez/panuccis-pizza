@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <title>Pizza Panucci</title>
+  </head>
+  <body>
+
+    <div class="container-fluid">
+
+      <div class="jumbotron">
+        <h1>Panucci's pizza</h1>
+      </div>
+
+    </div>
+
+    <div class="container">
+
+      <div class="row"> <!-- main: pizza selector -->
+        <div class="col-md-8">
+          <div class="row"> <!-- size selector -->
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="col-md-2">
+                  <h2>Size</h2>
+                </div>
+                <div class="col-md-7 col-md-offset-2">
+                  <form id="custom-pizza">
+                    <label class="radio-inline">
+                      <input type="radio" name="pizza-size" id="size-large" value="large"> Large
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="pizza-size" id="size-medium" value="medium"> Medium
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="pizza-size" id="size-personal" value="small"> Personal
+                    </label>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row"> <!-- crust selector -->
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="col-md-2">
+                  <h2>Crust</h2>
+                </div>
+                <div class="col-md-7 col-md-offset-2">
+                    <label class="radio-inline">
+                      <input type="radio" name="pizza-croust" id="croust-crispy" value="crispy"> Crispy
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="pizza-croust" id="croust-stuffed" value="medium"> Stuffed
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="pizza-croust" id="croust-gfree" value="gfree"> Gluten-Free
+                    </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row"> <!-- toppings selector -->
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="col-md-8">
+                  <select multiple class="form-control" id="toppings">
+                    <option value="Onions">Onions</option>
+                    <option value="Tomaotes">Tomates</option>
+                    <option value="Bacon">Bacon</option>
+                    <option value="Olives">Olives</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="col-md-12">
+                Your custom Pizza:
+                <ul id = "pizza-order">
+                </ul>
+                Your Toppings:
+                <ul id="pizza-toppings">
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>     <!-- colse main row -->
+
+      <div class="row">
+        <div class= "col-md-12">
+          <button type="submit" class="btn">Add this pizza to my order</button>
+        </div>
+
+      </form>
+
+    </div>
+
+
+  </body>
+</html>
