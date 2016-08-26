@@ -8,18 +8,35 @@ function Order(size, croust, toppings){
 };
 
 var sizes = {
-  pizzaAvailableSizes: ["large", "medium", "small"], pizzaSizePrices: [10, 8, 6]
+  pizzaAvailableSizes: ["Large", "Medium", "Personal"],
+  pizzaSizePrices: [10, 8, 6]
 };
 
 var crousts = {
-  pizzaAvailableCroust: ["crispy", "stuffed", "gfree"],
+  pizzaAvailableCroust: ["Crispy", "Stuffed", "Gluten-Free"],
   croustPrices: [2, 3, 4]
 }
 
 var toppings = {
-  toppingsNames: ["onions", "tomatoes", "bacon", "olives"],
+  toppingsNames: ["Onions", "Tomatoes", "Bacon", "Olives"],
   toppingsPrices: [2, 3, 4, 5]
 };
+
+function calculatePrice(){
+
+  var price = sizes.pizzaSizePrices[sizes.pizzaAvailableSizes.indexOf(newPizzaOrder.pizzaSize)] + crousts.croustPrices[crousts.pizzaAvailableCroust.indexOf(newPizzaOrder.pizzaCroust)]
+
+  for (var i = 0; i < newPizzaOrder.pizzaToppings.length; i++) {
+  var toppingPrice = toppings.toppingsNames.indexOf(newPizzaOrder.pizzaToppings[i]);
+  price += toppings.toppingsPrices[toppingPrice];
+  };
+
+
+
+  alert (price);
+
+};
+
 
 $(document).ready(function() {
 
@@ -35,7 +52,7 @@ $(document).ready(function() {
 
     var newPizzaToppings = $("#toppings").val();
 
-    var newPizzaOrder = new Order (newPizzaSize, newPizzaCroust, newPizzaToppings)
+    newPizzaOrder = new Order (newPizzaSize, newPizzaCroust, newPizzaToppings)
 
     console.log(newPizzaOrder);
 
@@ -46,6 +63,9 @@ $(document).ready(function() {
     newPizzaOrder.pizzaToppings.forEach(function(toppings){
     $("ul#pizza-order").append("<li class='list-group-item'>" + toppings + ".</li>");
     });
+
+    calculatePrice();
+
 
 
 
