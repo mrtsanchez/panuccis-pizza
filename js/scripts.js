@@ -19,7 +19,7 @@ function Contact (name, phone, street, city){
 };
 
 Order.prototype.orderDetails = function() {
-  return "1 Pizza, " + newPizzaOrder.pizzaSize + " size, with your choice of " + newPizzaOrder.pizzaCroust + " Croust, and " + newPizzaOrder.pizzaToppings.length + " toppings. Price:" + newPizzaOrder.price;
+  return "1 Pizza, " + newPizzaOrder.pizzaSize + " size, with your choice of " + newPizzaOrder.pizzaCroust + " Croust, and " + newPizzaOrder.pizzaToppings.length + " toppings. Price: $" + newPizzaOrder.price + ".";
 };
 
 Contact.prototype.orderDelivery = function(){
@@ -37,16 +37,17 @@ var crousts = {
 };
 
 var toppings = {
-  toppingsNames: ["Onions", "Tomatoes", "Bacon", "Olives"],
-  toppingsPrices: [2, 3, 4, 5]
+  toppingsNames: ["Onions", "Tomatoes", "Bacon", "Olives", "Anchovies", "Pineapple", "Chicken", "Cheese"],
+  toppingsPrices: [1, 1, 3, 2, 500, 1, 3, 1]
 };
 
 function addPizzatoOrder(size, croust, topping){
 
   newPizzaOrder = new Order (size, croust, topping);
-  calculatePrice()
+  calculatePrice();
   finalOrder.totalPrice += newPizzaOrder.price;
-  finalOrder.pizzas.push(newPizzaOrder)
+  finalOrder.pizzas.push(newPizzaOrder);
+  console.log(newPizzaOrder);
 };
 
 function calculatePrice(){
@@ -64,7 +65,7 @@ function resetForm(){
 
   $("input:radio[name=pizza-size]").prop('checked', false);
   $("input:radio[name=pizza-croust]").prop('checked', false);
-  $("#toppings").val("");
+  $("input:checkbox[name=toppings]").prop('checked', false);
 
 };
 
@@ -80,7 +81,13 @@ $(document).ready(function() {
 
     var newPizzaCroust = $("input:radio[name=pizza-croust]:checked").val();
 
-    var newPizzaToppings = $("#toppings").val();
+    var newPizzaToppings = [];
+
+    $("input:checkbox[name=toppings]:checked").each(function(){
+      newPizzaToppings.push($(this).val());
+    });
+
+    console.log(newPizzaToppings);
 
     addPizzatoOrder(newPizzaSize, newPizzaCroust, newPizzaToppings);
 
@@ -110,7 +117,7 @@ $(document).ready(function() {
     $(".checkout").show();
     $("#add-pizza").hide();
     $(".pizza-customization").hide();
-    $("ul#order-details").append("<li>Your total price for this order is $" + finalOrder.totalPrice + "</li>");
+    $("ul#order-details").append("<li>Your total price for this order is $ " + finalOrder.totalPrice + "</li>");
 
   });
 
@@ -136,9 +143,12 @@ $(document).ready(function() {
     var street = $("input#new-street").val();
     var city = $("input#new-city").val();
 
-    var clientAddress = new Address (name, phone, street, city);
+    clientAddress = new Contact (name, phone, street, city);
 
-    $("#confirm-delivery").text(clientAddres.orderDelivery());
+    $("#confirm-delivery").hide();
+    $(".delivery1").hide();
+    $(".delivery2").show();
+    $("#confirm-delivery").text(clientAddress.orderDelivery());
 
   });
 

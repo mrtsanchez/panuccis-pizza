@@ -5,6 +5,8 @@
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.1.0.js"></script>
     <script src="js/scripts.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina|Open+Sans" rel="stylesheet">
+
 
     <title>Pizza Panucci</title>
   </head>
@@ -13,7 +15,11 @@
     <div class="container-fluid header">
 
       <div class="jumbotron main-title">
+        <img src="img/panuccis-logo.png" alt="panuccis-logo" class="img-responsive header-image"/>
         <h1>Panucci's pizza</h1>
+        <p>
+          Customize your pizza and place your order:
+        </p>
       </div>
 
     </div>
@@ -23,15 +29,15 @@
       <div class="row"> <!-- main: pizza selector -->
         <div class="col-md-8">
           <div class="row"> <!-- size selector -->
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-custom">
               <div class="panel-body">
                 <div class="col-md-2">
                   <h2>Size</h2>
                 </div>
-                <div class="col-md-7 col-md-offset-2">
+                <div class="col-md-10 text-center">
                   <form id="custom-pizza">
                     <label class="radio-inline">
-                      <input type="radio" name="pizza-size" id="size-large" value="Large"> Large
+                      <input type="radio" name="pizza-size" id="size-large" value="Large" checked> Large
                     </label>
                     <label class="radio-inline">
                       <input type="radio" name="pizza-size" id="size-medium" value="Medium"> Medium
@@ -46,14 +52,14 @@
           </div>
 
           <div class="row"> <!-- crust selector -->
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-custom">
               <div class="panel-body">
                 <div class="col-md-2">
                   <h2>Crust</h2>
                 </div>
-                <div class="col-md-7 col-md-offset-2">
+                <div class="col-md-10 text-center">
                     <label class="radio-inline">
-                      <input type="radio" name="pizza-croust" id="croust-crispy" value="Crispy"> Crispy
+                      <input type="radio" name="pizza-croust" id="croust-crispy" value="Crispy" checked> Crispy
                     </label>
                     <label class="radio-inline">
                       <input type="radio" name="pizza-croust" id="croust-stuffed" value="Stuffed"> Stuffed
@@ -65,62 +71,107 @@
               </div>
             </div>
           </div>
-
-          <div class="row"> <!-- toppings selector -->
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <div class="col-md-8">
-                  <select multiple class="form-control" id="toppings">
-                    <option value="Onions">Onions</option>
-                    <option value="Tomatoes">Tomates</option>
-                    <option value="Bacon">Bacon</option>
-                    <option value="Olives">Olives</option>
-                  </select>
-                </div>
-              </div>
+<!-- toppings selector -->
+        <div class = "toppings">
+          <div class="row">
+            <div class="col-md-3">
+              <img src="img/onion.png" class="img-responsive center-block" alt="onions" />
+            </div>
+            <div class="col-md-3">
+              <img src="img/tomato.png" class="img-responsive center-block" alt="tomato" />
+            </div>
+            <div class="col-md-3">
+              <img src="img/bacon.png" class="img-responsive center-block" alt="bacon" />
+            </div>
+            <div class="col-md-3">
+              <img src="img/olives.png" class="img-responsive center-block" alt="olives" />
             </div>
           </div>
-
+          <div class="row">
+            <div class="col-md-3 text-center">
+              <input type="checkbox" name="toppings" value="Onions">
+            </div>
+            <div class="col-md-3 text-center">
+              <input type="checkbox" name="toppings" value="Tomatoes">
+            </div>
+            <div class="col-md-3 text-center">
+              <input type="checkbox" name="toppings" value="Bacon">
+            </div>
+            <div class="col-md-3 text-center">
+              <input type="checkbox" name="toppings" value="Olives">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <img src="img/fish.png" class="img-responsive center-block" alt="Anchovies" />
+            </div>
+            <div class="col-md-3">
+              <img src="img/pineapple.png" class="img-responsive center-block" alt="Pineapple" />
+            </div>
+            <div class="col-md-3">
+              <img src="img/chicken-leg.png" class="img-responsive center-block" alt="Chicken" />
+            </div>
+            <div class="col-md-3">
+              <img src="img/cheese.png" class="img-responsive center-block" alt="Cheese" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 text-center">
+              <input type="checkbox" name="toppings" value="Anchovies">
+            </div>
+            <div class="col-md-3 text-center">
+              <input type="checkbox" name="toppings" value="Pineapple">
+            </div>
+            <div class="col-md-3 text-center">
+              <input type="checkbox" name="toppings" value="Chicken">
+            </div>
+            <div class="col-md-3 text-center">
+              <input type="checkbox" name="toppings" value="Cheese">
+            </div>
+          </div>
         </div>
+
+      </div>
 
         <div class="col-md-4">
           <ul class="list-group" id = "pizza-order">
           </ul>
         </div>
-      </div>     <!-- colse main row -->
+    </div>     <!-- colse main row -->
 
       <div class="row">
-        <div class= "col-md-8">
-          <button type="submit" class="btn btn-lg custom-button-right" id="add-pizza">Add this pizza to my order</button>
+          <div class= "col-md-8 text-center">
+            <button type="submit" class="btn btn-lg btn-green" id="add-pizza">Add this pizza to my order</button>
+          </div>
+        </form>
+        <div class= "col-md-4">
+          <button type="button" class="btn btn-lg btn-green custom-button-right" id="add-more-pizza">Add Another Pizza</button>
+          <button type="button" class="btn btn-lg btn-green custom-button-left" id="checkout">Checkout</button>
         </div>
-      </form>
-      <div class= "col-md-4">
-        <button type="button" class="btn btn-lg custom-button-right" id="add-more-pizza">Add Another Pizza</button>
-        <button type="button" class="btn btn-lg custom-button-right" id="checkout">Checkout</button>
       </div>
     </div>
-
-  </div>
+   <!-- colse main container -->
 
   <div class="container checkout">
     <div class="row">
       <div class="col-md-12">
-        <div class="panel panel-default">
+        <div class="panel panel-default panel-custom">
           <div class="panel-body">
             <div class="raw">
               <div class="col-md-12">
-                <p>
+                <h1>
                   Order Details:
-                </p>
+                </h1>
                 <ul class="list-unstyled" id="order-details"></ul>
+                <h2>Is this order for delivery or carryout?</h2>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6">
-                <button type="button" class="btn btn-lg custom-button-right" id="delivery">Delivery</button>
+                <button type="button" class="btn btn-lg btn-green custom-button-right" id="delivery">Delivery</button>
               </div>
               <div class="col-md-6">
-              <button type="button" class="btn btn-lg custom-button-left" id="pickup">Carryout</button>
+              <button type="button" class="btn btn-lg btn-green custom-button-left" id="pickup">Carryout</button>
               </div>
             </div>
           </div>
@@ -147,7 +198,7 @@
            <label for="new-city">City</label>
            <input type="text" class="form-control" id="new-city">
          </div>
-         <button type="submit" class="btn btn-lg btn-block">Place Order</button>
+         <button type="submit" class="btn btn-lg btn-green btn-block">Place Order</button>
     </form>
   </div>
 
@@ -157,9 +208,9 @@
 
   <div class="container pickup">
     <span id="confirm-pickup"></span>
-    <p>
-      Thanks! You can pick up your order at our closest location.
-    </p>
+    <h1>
+      Thanks! You can pick up your order at your nearest store.
+    </h1>
   </div>
 
 
