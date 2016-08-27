@@ -1,5 +1,11 @@
 body {
   margin-left: 10px;
+  background-color: #FBFBF2;
+}
+
+.main-title {
+  background-color: #ED6A5A;
+  color: #FBFBF2;
 }
 
 .list-title {
@@ -8,10 +14,24 @@ body {
   font-weight: bold;
 }
 
-.custom-button {
+.custom-button-left {
+  float: left;
+}
+
+.custom-button-right {
   float: right;
 }
 
-#checkout, #add-more-pizza {
+#checkout, #add-more-pizza, #confirm-delivery {
   display: none;
+}
+
+.delivery1, .checkout, .pickup {
+  display: none;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
 }

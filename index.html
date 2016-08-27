@@ -12,7 +12,7 @@
 
     <div class="container-fluid header">
 
-      <div class="jumbotron">
+      <div class="jumbotron main-title">
         <h1>Panucci's pizza</h1>
       </div>
 
@@ -91,12 +91,12 @@
 
       <div class="row">
         <div class= "col-md-8">
-          <button type="submit" class="btn btn-lg custom-button" id="add-pizza">Add this pizza to my order</button>
+          <button type="submit" class="btn btn-lg custom-button-right" id="add-pizza">Add this pizza to my order</button>
         </div>
       </form>
       <div class= "col-md-4">
-        <button type="button" class="btn btn-lg custom-button" id="add-more-pizza">Add Another Pizza</button>
-        <button type="button" class="btn btn-lg custom-button" id="checkout">Checkout</button>
+        <button type="button" class="btn btn-lg custom-button-right" id="add-more-pizza">Add Another Pizza</button>
+        <button type="button" class="btn btn-lg custom-button-right" id="checkout">Checkout</button>
       </div>
     </div>
 
@@ -107,18 +107,59 @@
       <div class="col-md-12">
         <div class="panel panel-default">
           <div class="panel-body">
-            <p>
-              Order Details:
-            </p>
-            <ul class="list-unstyled" id="order-details">
-
-            </ul>
-            <button type="button" class="btn btn-lg" id="delivery">Delivery</button>
-            <button type="button" class="btn btn-lg" id="pickup">Carryout</button>
+            <div class="raw">
+              <div class="col-md-12">
+                <p>
+                  Order Details:
+                </p>
+                <ul class="list-unstyled" id="order-details"></ul>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <button type="button" class="btn btn-lg custom-button-right" id="delivery">Delivery</button>
+              </div>
+              <div class="col-md-6">
+              <button type="button" class="btn btn-lg custom-button-left" id="pickup">Carryout</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="container delivery1">
+    <form id="new-client">
+        <div class="form-group">
+          <label for="new-first-name">First name</label>
+          <input type="text" class="form-control" id="new-first-name" required>
+        </div>
+        <div class="form-group">
+          <label for="new-phone">Phone</label>
+          <input type="number" class="form-control" id="new-phone">
+        </div>
+         <div class="form-group">
+           <label for="new-street">Street</label>
+           <input type="text" class="form-control" id="new-street">
+         </div>
+         <div class="form-group">
+           <label for="new-city">City</label>
+           <input type="text" class="form-control" id="new-city">
+         </div>
+         <button type="submit" class="btn btn-lg btn-block">Place Order</button>
+    </form>
+  </div>
+
+  <div class="container delivery2">
+    <span id = "confirm-delivery"></span>
+  <div>
+
+  <div class="container pickup">
+    <span id="confirm-pickup"></span>
+    <p>
+      Thanks! You can pick up your order at our closest location.
+    </p>
   </div>
 
 

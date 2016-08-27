@@ -1,8 +1,7 @@
 function Checkout (){
-  this.userName = " ";
   this.pizzas = [];
   this.totalPrice = 0;
-}
+};
 
 function Order (size, croust, toppings){
   this.pizzaSize = size;
@@ -12,8 +11,19 @@ function Order (size, croust, toppings){
   this.price = 0;
 };
 
+function Contact (name, phone, street, city){
+  this.clientName = name;
+  this.phone = phone;
+  this.street = street;
+  this.city = city;
+};
+
 Order.prototype.orderDetails = function() {
-  return "1 Pizza, " + newPizzaOrder.pizzaSize + " size, with your choice of " + newPizzaOrder.pizzaCroust + " Croust, and " + newPizzaOrder.pizzaToppings.length + " toppings";
+  return "1 Pizza, " + newPizzaOrder.pizzaSize + " size, with your choice of " + newPizzaOrder.pizzaCroust + " Croust, and " + newPizzaOrder.pizzaToppings.length + " toppings. Price:" + newPizzaOrder.price;
+};
+
+Contact.prototype.orderDelivery = function(){
+  return "Thank you for your order, " + clientAddress.clientName + "! You'll get your pizza in " + clientAddress.street + "," + clientAddress.city + ", anytime in the next 20 years. We'll call you at " + clientAddress.phone + " to schedule the delivery. Thanks for your business.";
 }
 
 var sizes = {
@@ -24,7 +34,7 @@ var sizes = {
 var crousts = {
   pizzaAvailableCroust: ["Crispy", "Stuffed", "Gluten-Free"],
   croustPrices: [2, 3, 4]
-}
+};
 
 var toppings = {
   toppingsNames: ["Onions", "Tomatoes", "Bacon", "Olives"],
@@ -35,11 +45,8 @@ function addPizzatoOrder(size, croust, topping){
 
   newPizzaOrder = new Order (size, croust, topping);
   calculatePrice()
-  finalOrder = new Checkout ();
   finalOrder.totalPrice += newPizzaOrder.price;
   finalOrder.pizzas.push(newPizzaOrder)
-  console.log(newPizzaOrder);
-  console.log(finalOrder);
 };
 
 function calculatePrice(){
@@ -53,8 +60,17 @@ function calculatePrice(){
 
 };
 
+function resetForm(){
+
+  $("input:radio[name=pizza-size]").prop('checked', false);
+  $("input:radio[name=pizza-croust]").prop('checked', false);
+  $("#toppings").val("");
+
+};
 
 $(document).ready(function() {
+
+  finalOrder = new Checkout ();
 
   $("form#custom-pizza").submit(function(event){
 
@@ -69,6 +85,8 @@ $(document).ready(function() {
     addPizzatoOrder(newPizzaSize, newPizzaCroust, newPizzaToppings);
 
     $("#checkout").show();
+    $("#add-pizza").hide();
+    $("#add-more-pizza").show();
     $("ul#pizza-order").append("<li class='list-group-item list-title'>Your custom Pizza:</li>");
     $("ul#pizza-order").append("<li class='list-group-item'>Your Size: " + newPizzaOrder.pizzaSize + ".</li>");
     $("ul#pizza-order").append("<li class='list-group-item'>Your Croust: " + newPizzaOrder.pizzaCroust + ".</li>");
@@ -76,23 +94,52 @@ $(document).ready(function() {
     newPizzaOrder.pizzaToppings.forEach(function(toppings){
     $("ul#pizza-order").append("<li class='list-group-item'>" + toppings + ".</li>");
     });
-    $("ul#pizza-order").append("<li class='list-group-item'>$" + finalOrder.totalPrice + "</li>");
+    $("ul#pizza-order").append("<li class='list-group-item'>$" + newPizzaOrder.price + "</li>");
+    $("ul#order-details").append("<li>" + newPizzaOrder.orderDetails() + "</li>");
 
 
+  });
+
+  $("#add-more-pizza").click(function(){
+    $("#add-pizza").show();
+    resetForm();
   });
 
   $("#checkout").click(function(){
 
     $(".checkout").show();
     $("#add-pizza").hide();
-    $("#add-more-pizza").show()''
-
-    finalOrder.pizzas.forEach(function(pizza) {
-      $("ul#order-details").append("<li>" + pizza.orderDetails() + "</li>");
-    });
+    $(".pizza-customization").hide();
+    $("ul#order-details").append("<li>Your total price for this order is $" + finalOrder.totalPrice + "</li>");
 
   });
 
-  $("#add-more-pizza").click(function(){
+  $("#delivery").click(function(){
+
+    $(".delivery1").show();
+
+  });
+
+  $("#pickup").click(function(){
+
+    $(".pickup").show();
+    $(".checkout").hide();
+
+  });
+
+  $("form#new-client").submit(function(event){
+
+    event.preventDefault();
+
+    var name = $("input#new-first-name").val();
+    var phone = $("input#new-phone").val();
+    var street = $("input#new-street").val();
+    var city = $("input#new-city").val();
+
+    var clientAddress = new Address (name, phone, street, city);
+
+    $("#confirm-delivery").text(clientAddres.orderDelivery());
+
+  });
 
 });
