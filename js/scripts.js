@@ -1,6 +1,7 @@
 function Checkout (){
   this.pizzas = [];
   this.totalPrice = 0;
+  this.orderedPizzas = 0;
 };
 
 function Order (size, crust, toppings){
@@ -47,6 +48,8 @@ function addPizzatoOrder(size, crust, topping){
   calculatePrice();
   finalOrder.totalPrice += newPizzaOrder.price;
   finalOrder.pizzas.push(newPizzaOrder);
+  finalOrder.orderedPizzas += 1;
+
 };
 
 function calculatePrice(){
@@ -97,15 +100,15 @@ $(document).ready(function() {
     $("#order-list").show();
     $("#add-pizza").hide();
     $("#add-more-pizza").show();
-    $("#custom-pizza-title").append("<a data-toggle='collapse' data-parent='#order-list' href='#pizzaOne'>Your custom " + newPizzaOrder.pizzaSize + " Pizza: </a>");
-    $("ul#pizza-order").append("<div id='pizzaOne' class='panel-collapse collapse'>")
-    $("ul#pizza-order").append("<li class='list-group-item'>Your Size: " + newPizzaOrder.pizzaSize + ".</li>");
-    $("ul#pizza-order").append("<li class='list-group-item'>Your crust: " + newPizzaOrder.pizzaCrust + ".</li>");
-    $("ul#pizza-order").append("<li class='list-group-item'><strong>Your Toppings:</strong></li>");
+    $("#test").append("<div class='panel panel-default panel-order'><div class='panel-heading' id='custom-heading'><span id='custom-pizza-title"+ finalOrder.orderedPizzas + "'></span></div><div id='pizza"+ finalOrder.orderedPizzas+"' class='panel-collapse collapse'><div class='panel-body'><ul class='list-group' id ='pizza-order"+ finalOrder.orderedPizzas+"'></ul></div></div></div>")
+    $("#custom-pizza-title"+finalOrder.orderedPizzas).append("<a data-toggle='collapse' data-parent='#order-list' href='#pizza"+finalOrder.orderedPizzas+"'>Your custom " + newPizzaOrder.pizzaSize + " Pizza: </a>");
+    $("ul#pizza-order"+finalOrder.orderedPizzas).append("<li class='list-group-item'>Your Size: " + newPizzaOrder.pizzaSize + ".</li>");
+    $("ul#pizza-order"+finalOrder.orderedPizzas).append("<li class='list-group-item'>Your crust: " + newPizzaOrder.pizzaCrust + ".</li>");
+    $("ul#pizza-order"+finalOrder.orderedPizzas).append("<li class='list-group-item'><strong>Your Toppings:</strong></li>");
     newPizzaOrder.pizzaToppings.forEach(function(toppings){
-    $("ul#pizza-order").append("<li class='list-group-item'>" + toppings + ".</li>");
+    $("ul#pizza-order"+finalOrder.orderedPizzas).append("<li class='list-group-item'>" + toppings + ".</li>");
     });
-    $("ul#pizza-order").append("<li class='list-group-item'>$" + newPizzaOrder.price + "</li>");
+    $("ul#pizza-order"+finalOrder.orderedPizzas).append("<li class='list-group-item'>$" + newPizzaOrder.price + "</li>");
     $("ul#order-details").append("<li>" + newPizzaOrder.orderDetails() + "</li>");
 
 
