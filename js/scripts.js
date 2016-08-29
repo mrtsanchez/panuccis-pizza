@@ -47,7 +47,6 @@ function addPizzatoOrder(size, crust, topping){
   calculatePrice();
   finalOrder.totalPrice += newPizzaOrder.price;
   finalOrder.pizzas.push(newPizzaOrder);
-  console.log(newPizzaOrder);
 };
 
 function calculatePrice(){
@@ -66,6 +65,7 @@ function resetForm(){
   $("input:radio[name=pizza-size]").prop('checked', false);
   $("input:radio[name=pizza-crust]").prop('checked', false);
   $("input:checkbox[name=toppings]").prop('checked', false);
+  $(".toppings-img").removeClass("select-topping");
 
 };
 
@@ -74,9 +74,6 @@ $(document).ready(function() {
   $(document).on("click", function(event) {
     $(event.target).closest(".toppings-img").toggleClass("select-topping");
   });
-
-
-
 
   finalOrder = new Checkout ();
 
