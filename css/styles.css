@@ -73,9 +73,13 @@ body {
   color: white;
 }
 
+.buttons {
+  margin-top: 20px;
+}
+
 /*Hide additional screens*/
 
-#checkout, #add-more-pizza, #confirm-delivery {
+#checkout, #add-more-pizza, #confirm-delivery, #order-list {
   display: none;
 }
 
@@ -92,5 +96,23 @@ body {
   padding: 10px 15px;
   margin-bottom: -1px;
   background-color: #F4F1BB;
-  border: 1px solid #FBFBF2;
+  border: 0px solid #FBFBF2;
+}
+
+.panel-order {
+  background-color: #F4F1BB;
+}
+
+#custom-heading {
+  background-color: #F4F1BB;
+  font-size: 1em;
+}
+
+a {
+  color: black;
+}
+
+
+a:hover {
+  color: black;
 }

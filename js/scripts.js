@@ -94,9 +94,11 @@ $(document).ready(function() {
     addPizzatoOrder(newPizzaSize, newpizzaCrust, newPizzaToppings);
 
     $("#checkout").show();
+    $("#order-list").show();
     $("#add-pizza").hide();
     $("#add-more-pizza").show();
-    $("ul#pizza-order").append("<li class='list-group-item list-title'>Your custom Pizza:</li>");
+    $("#custom-pizza-title").append("<a data-toggle='collapse' data-parent='#order-list' href='#pizzaOne'>Your custom " + newPizzaOrder.pizzaSize + " Pizza: </a>");
+    $("ul#pizza-order").append("<div id='pizzaOne' class='panel-collapse collapse'>")
     $("ul#pizza-order").append("<li class='list-group-item'>Your Size: " + newPizzaOrder.pizzaSize + ".</li>");
     $("ul#pizza-order").append("<li class='list-group-item'>Your crust: " + newPizzaOrder.pizzaCrust + ".</li>");
     $("ul#pizza-order").append("<li class='list-group-item'><strong>Your Toppings:</strong></li>");
