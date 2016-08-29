@@ -79,7 +79,7 @@ body {
 
 /*Hide additional screens*/
 
-#checkout, #add-more-pizza, #confirm-delivery, #order-list {
+#checkout, #add-more-pizza, #confirm-delivery {
   display: none;
 }
 
