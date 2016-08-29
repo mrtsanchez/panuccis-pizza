@@ -71,6 +71,13 @@ function resetForm(){
 
 $(document).ready(function() {
 
+  $(document).on("click", function(event) {
+    $(event.target).closest(".toppings-img").toggleClass("select-topping");
+  });
+
+
+
+
   finalOrder = new Checkout ();
 
   $("form#custom-pizza").submit(function(event){
