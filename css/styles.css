@@ -9,7 +9,6 @@ body {
   background-color: #ED6A5A;
   color: #FBFBF2;
   padding-top: 15px;
-  min-height: 200px;
 }
 
 .main-title h1 {
@@ -30,7 +29,7 @@ body {
 }
 
 .panel-custom {
-  background-color: #F4F1BB;
+  background-color: #7FC6A4;
 }
 
 .panel {
@@ -39,8 +38,14 @@ body {
   border-radius: 4px;
 }
 
+/*Toppings selection*/
+
 .toppings {
-  margin-bottom: 20px;
+  margin-left: 30px;
+}
+
+.checkboxes {
+  display: none;
 }
 
 .toppings-img {
@@ -86,7 +91,6 @@ body {
   display: block;
   padding: 10px 15px;
   margin-bottom: -1px;
-  background-color: #7FC6A4;
-  border: 1px solid #ddd;
-  color: white;
+  background-color: #F4F1BB;
+  border: 1px solid #FBFBF2;
 }
