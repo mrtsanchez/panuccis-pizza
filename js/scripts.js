@@ -62,8 +62,8 @@ function calculatePrice(){
 
 function resetForm(){
 
-  $("input:radio[name=pizza-size]").prop('checked', false);
-  $("input:radio[name=pizza-crust]").prop('checked', false);
+  $('input:radio[name=pizza-size]').eq(0).prop('checked', true);
+  $("input:radio[name=pizza-crust]").eq(0).prop('checked', true);
   $("input:checkbox[name=toppings]").prop('checked', false);
   $(".toppings-img").removeClass("select-topping");
 
