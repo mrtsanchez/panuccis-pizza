@@ -7,14 +7,10 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/scripts.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina|Open+Sans" rel="stylesheet">
-
-
     <title>Pizza Panucci</title>
   </head>
   <body>
-
     <div class="container-fluid header">
-
       <div class="jumbotron main-title">
         <img src="img/panuccis-logo.png" alt="panuccis-logo" class="img-responsive header-image"/>
         <h1>Panucci's pizza</h1>
@@ -22,11 +18,8 @@
           Customize your pizza and place your order:
         </p>
       </div>
-
     </div>
-
     <div class="container pizza-customization">
-
       <div class="row"> <!-- main: pizza selector -->
         <div class="col-md-8">
           <div class="row"> <!-- size selector -->
@@ -46,12 +39,10 @@
                     <label class="radio-inline">
                       <input type="radio" name="pizza-size" id="size-personal" value="Personal"> Personal
                     </label>
-
                 </div>
               </div>
             </div>
           </div>
-
           <div class="row"> <!-- crust selector -->
             <div class="panel panel-default panel-custom">
               <div class="panel-body">
@@ -72,80 +63,71 @@
               </div>
             </div>
           </div>
-
-<!-- toppings selector -->
-        <div class = "toppings">
-          <div class="row">
-            <div class="col-md-3">
-              <label for="onions"><img src="img/onion.png" class="img-responsive center-block toppings-img" alt="onions" /></label>
+          <div class = "toppings"><!-- toppings selector -->
+            <div class="row">
+              <div class="col-md-3">
+                <label for="onions"><img src="img/onion.png" class="img-responsive center-block toppings-img" alt="onions" /></label>
+              </div>
+              <div class="col-md-3">
+                <label for="tomatoes"><img src="img/tomato.png" class="img-responsive center-block toppings-img" alt="tomato" /></label>
+              </div>
+              <div class="col-md-3">
+                <label for="bacon"><img src="img/bacon.png" class="img-responsive center-block toppings-img" alt="bacon" /></label>
+              </div>
+              <div class="col-md-3">
+                <label for="olives"><img src="img/olives.png" class="img-responsive center-block toppings-img" alt="olives" /></label>
+              </div>
             </div>
-            <div class="col-md-3">
-              <label for="tomatoes"><img src="img/tomato.png" class="img-responsive center-block toppings-img" alt="tomato" /></label>
-            </div>
-            <div class="col-md-3">
-              <label for="bacon"><img src="img/bacon.png" class="img-responsive center-block toppings-img" alt="bacon" /></label>
-            </div>
-            <div class="col-md-3">
-              <label for="olives"><img src="img/olives.png" class="img-responsive center-block toppings-img" alt="olives" /></label>
-            </div>
-          </div>
-          <div class="row checkboxes">
-            <div class="col-md-3 text-center">
-              <input type="checkbox" name="toppings" value="Onions" id="onions">
-            </div>
-            <div class="col-md-3 text-center">
-              <input type="checkbox" name="toppings" value="Tomatoes" id="tomatoes">
-            </div>
-            <div class="col-md-3 text-center">
-              <input type="checkbox" name="toppings" value="Bacon" id="bacon">
-            </div>
-            <div class="col-md-3 text-center">
-              <input type="checkbox" name="toppings" value="Olives" id="olives">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-3">
-              <label for="anchovies"><img src="img/fish.png" class="img-responsive center-block toppings-img" alt="Anchovies" /></label>
-            </div>
-            <div class="col-md-3">
-              <label for="pineapple"><img src="img/pineapple.png" class="img-responsive center-block toppings-img" alt="Pineapple" /></label>
-            </div>
-            <div class="col-md-3">
-              <label for="chicken"><img src="img/chicken-leg.png" class="img-responsive center-block toppings-img" alt="Chicken" /></label>
-            </div>
-            <div class="col-md-3">
-              <label for="cheese"><img src="img/cheese.png" class="img-responsive center-block toppings-img" alt="Cheese" /></label>
-            </div>
-          </div>
-          <div class="row checkboxes">
-            <div class="col-md-3 text-center">
-              <input type="checkbox" name="toppings" value="Anchovies" id="anchovies">
-            </div>
-            <label for="olives"><div class="col-md-3 text-center">
-              <input type="checkbox" name="toppings" value="Pineapple" id="pineapple">
-            </div>
-            =<div class="col-md-3 text-center">
-              <input type="checkbox" name="toppings" value="Chicken" id="chicken">
-            </div>
+            <div class="row checkboxes">
               <div class="col-md-3 text-center">
-              <input type="checkbox" name="toppings" value="Cheese" id="cheese">
+                <input type="checkbox" name="toppings" value="Onions" id="onions">
+              </div>
+              <div class="col-md-3 text-center">
+                <input type="checkbox" name="toppings" value="Tomatoes" id="tomatoes">
+              </div>
+              <div class="col-md-3 text-center">
+                <input type="checkbox" name="toppings" value="Bacon" id="bacon">
+              </div>
+              <div class="col-md-3 text-center">
+                <input type="checkbox" name="toppings" value="Olives" id="olives">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <label for="anchovies"><img src="img/fish.png" class="img-responsive center-block toppings-img" alt="Anchovies" /></label>
+              </div>
+              <div class="col-md-3">
+                <label for="pineapple"><img src="img/pineapple.png" class="img-responsive center-block toppings-img" alt="Pineapple" /></label>
+              </div>
+              <div class="col-md-3">
+                <label for="chicken"><img src="img/chicken-leg.png" class="img-responsive center-block toppings-img" alt="Chicken" /></label>
+              </div>
+              <div class="col-md-3">
+                <label for="cheese"><img src="img/cheese.png" class="img-responsive center-block toppings-img" alt="Cheese" /></label>
+              </div>
+            </div>
+            <div class="row checkboxes">
+              <div class="col-md-3 text-center">
+                <input type="checkbox" name="toppings" value="Anchovies" id="anchovies">
+              </div>
+              <label for="olives"><div class="col-md-3 text-center">
+                <input type="checkbox" name="toppings" value="Pineapple" id="pineapple">
+              </div>
+              =<div class="col-md-3 text-center">
+                <input type="checkbox" name="toppings" value="Chicken" id="chicken">
+              </div>
+                <div class="col-md-3 text-center">
+                <input type="checkbox" name="toppings" value="Cheese" id="cheese">
+              </div>
             </div>
           </div>
-        </div>
-
       </div>
-
         <div class="col-md-4">
           <div id="order-list">
           <span id="test"></span>
-
-
           </div>
-
         </div>
-
-    </div>     <!-- colse main row -->
-
+    </div><!-- colse main row -->
       <div class="row buttons">
           <div class= "col-md-8 text-center">
             <button type="submit" class="btn btn-lg btn-green" id="add-pizza">Add this pizza to my order</button>
@@ -156,71 +138,61 @@
           <button type="button" class="btn btn-lg btn-green custom-button-left" id="checkout">Checkout</button>
         </div>
       </div>
-
     </div>  <!-- colse pizza customization container -->
-
-
-  <div class="container checkout">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="panel panel-default panel-custom">
-          <div class="panel-body">
-            <div class="raw">
-              <div class="col-md-12">
-                <h1>
-                  Order Details:
-                </h1>
-                <ul class="list-unstyled" id="order-details"></ul>
-                <h2>Is this order for delivery or carryout?</h2>
+    <div class="container checkout">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default panel-custom">
+            <div class="panel-body">
+              <div class="raw">
+                <div class="col-md-12">
+                  <h1>
+                    Order Details:
+                  </h1>
+                  <ul class="list-unstyled" id="order-details"></ul>
+                  <h2>Is this order for delivery or carryout?</h2>
+                </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <button type="button" class="btn btn-lg btn-green custom-button-right" id="delivery">Delivery</button>
-              </div>
-              <div class="col-md-6">
-              <button type="button" class="btn btn-lg btn-green custom-button-left" id="pickup">Carryout</button>
+              <div class="row">
+                <div class="col-md-6">
+                  <button type="button" class="btn btn-lg btn-green custom-button-right" id="delivery">Delivery</button>
+                </div>
+                <div class="col-md-6">
+                <button type="button" class="btn btn-lg btn-green custom-button-left" id="pickup">Carryout</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="container delivery1">
-    <form id="new-client">
-        <div class="form-group">
-          <label for="new-first-name">First name</label>
-          <input type="text" class="form-control" id="new-first-name" required>
-        </div>
-        <div class="form-group">
-          <label for="new-phone">Phone</label>
-          <input type="number" class="form-control" id="new-phone">
-        </div>
-         <div class="form-group">
-           <label for="new-street">Street</label>
-           <input type="text" class="form-control" id="new-street">
-         </div>
-         <div class="form-group">
-           <label for="new-city">City</label>
-           <input type="text" class="form-control" id="new-city">
-         </div>
-         <button type="submit" class="btn btn-lg btn-green btn-block">Place Order</button>
-    </form>
-  </div>
-
-  <div class="container delivery2">
-    <span id = "confirm-delivery"></span>
-  <div>
-
-  <div class="container pickup">
-    <span id="confirm-pickup"></span>
-    <h1>
-      Thanks! You can pick up your order at your nearest store.
-    </h1>
-  </div>
-
-
+    <div class="container delivery1">
+      <form id="new-client">
+          <div class="form-group">
+            <label for="new-first-name">First name</label>
+            <input type="text" class="form-control" id="new-first-name" required>
+          </div>
+          <div class="form-group">
+            <label for="new-phone">Phone</label>
+            <input type="number" class="form-control" id="new-phone">
+          </div>
+           <div class="form-group">
+             <label for="new-street">Street</label>
+             <input type="text" class="form-control" id="new-street">
+           </div>
+           <div class="form-group">
+             <label for="new-city">City</label>
+             <input type="text" class="form-control" id="new-city">
+           </div>
+           <button type="submit" class="btn btn-lg btn-green btn-block">Place Order</button>
+      </form>
+    </div>
+    <div class="container delivery2">
+      <span id = "confirm-delivery"></span>
+    <div>
+    <div class="container pickup">
+      <span id="confirm-pickup"></span>
+      <h1>Thanks! You can pick up your order at your nearest store.</h1>
+    </div>
   </body>
 </html>
