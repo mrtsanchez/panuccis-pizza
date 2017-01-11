@@ -1,6 +1,8 @@
-# Pizza Company Website
+# Panuccis Pizza
 
-This is a starter pack for Epicodus Intro to Programming Projects.
+Epicodus Intro to Programming Week 4 Individual Project: Build a website to order a pizza using object-oriented JavaScript.
+
+![app screenshot](https://github.com/mrtsanchez/panuccis-pizza/blob/master/img/screenshot.png)
 
 ## Specs
 
@@ -15,9 +17,21 @@ This is a starter pack for Epicodus Intro to Programming Projects.
 | User wants delivery, should be able to input address | Click "delivery"| Display address form |
 | User wants pickup, should see a greeting message | Click "carryout" | "Thanks! You can pick up your order at your nearest store." |
 
+##  Technologies used
+
+HTML, CSS, Bootstrap, JavaScript, jQuery
+
+## Setup / Installation
+
+```
+$ git clone https://github.com/mrtsanchez/panuccis-pizza
+```
+
 ## Credits
 
 Marta Sánchez
+
+Icons made by [Freepik](http://www.freepik.com/) from [www.flaticon.com](www.flaticon.com)
 
 This software is licensed under MIT license.
 
